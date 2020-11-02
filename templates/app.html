@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Flask Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/app.css') }}" />
+  </head>
+  <body>
+    <div class="header">
+      <h2>Calculator</h2>
+    </div>
+
+    <div class="container">
+      <form action="/calculate" method="POST">
+        <div class="form-group">
+          <input type="text" placeholder="First Number" name="num1" />
+        </div>
+
+        <div class="form-group">
+          <input type="text" placeholder="Second Number" name="num2" />
+        </div>
+
+        <div class="form-group">
+          <select name="operation">
+            <option value="add">Add</option>
+            <option value="subtract">Add</option>
+            <option value="multiply">multiply</option>
+            <option value="divide">divide</option>
+          </select>
+        </div>
+
+        <input type="submit" value="Calculate" id="calc_btn" class="btn" />
+        <br />
+
+        <div class="alert">
+          {{ result }}
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
